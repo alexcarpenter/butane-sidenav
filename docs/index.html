@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Butane Side-Nav</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <link rel="stylesheet" href="./styles.css">
+</head>
+<body>
+  <div id="main">
+    <button data-butane-sidenav-controls="side-nav-example-1">Show side-nav 1</button>
+    <button data-butane-sidenav-controls="side-nav-example-2">Show side-nav 2</button>
+  </div>
+
+  <div class="c-sidenav" id="side-nav-example-1">
+    <nav class="c-sidenav__inner">
+      <button data-butane-sidenav-hide>&times;</button>
+      <h1>Side Nav 1</h1>
+    </nav>
+    <div class="c-sidenav__overlay" data-butane-sidenav-hide></div>
+  </div>
+
+  <div class="c-sidenav" id="side-nav-example-2">
+    <nav class="c-sidenav__inner">
+      <button data-butane-sidenav-hide>&times;</button>
+      <h1>Side Nav 2</h1>
+    </nav>
+    <div class="c-sidenav__overlay" data-butane-sidenav-hide></div>
+  </div>
+
+  <script src="./butane-sidenav.umd.js"></script>
+  <script>
+    ButaneSideNav.init();
+  </script>
+</body>
+</html>
