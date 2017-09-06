@@ -4,13 +4,17 @@ import 'inert-polyfill'
 import { focusableElements, keyCodes } from './utils'
 
 class ButaneSideNav {
-  constructor (element) {
+  constructor (element, options) {
     this.showButton = element
     this.sideNavId = this.showButton.getAttribute('data-butane-sidenav-controls')
     this.sideNav = document.querySelector(`#${this.sideNavId}`)
     this.focusableElements = Array.from(
       this.sideNav.querySelectorAll(focusableElements)
     )
+    this.options = {
+      contentContainer: options.contentContainer ? options.contentContainer : '#main'
+    }
+    this.contentContainer = document.querySelector(this.options.contentContainer)
     this.hideElements = this.sideNav.querySelectorAll('[data-butane-sidenav-hide]')
     this.shown = false
     this.previousActiveElement = null
@@ -29,7 +33,7 @@ class ButaneSideNav {
     this.addEventListeners()
   }
 
-  addEventListeners() {
+  addEventListeners () {
     this.showButton.addEventListener('click', this._show)
     Array.from(this.hideElements).forEach(element => {
       element.addEventListener('click', this._hide)
@@ -42,6 +46,7 @@ class ButaneSideNav {
     this.shown = true
     this.sideNav.classList.add('is-active')
     this.sideNav.removeAttribute('inert')
+    this.contentContainer.inert = true
 
     if (this.focusableElements.length > 0) {
       this.focusableElements.forEach(element => {
@@ -55,6 +60,7 @@ class ButaneSideNav {
     this.shown = false
     this.sideNav.classList.remove('is-active')
     this.sideNav.inert = true
+    this.contentContainer.removeAttribute('inert')
 
     if (this.focusableElements.length > 0) {
       this.focusableElements.forEach(element => {
@@ -74,11 +80,11 @@ class ButaneSideNav {
   }
 }
 
-const init = () => {
+const init = (options = {}) => {
   const butaneSideNavs = document.querySelectorAll('[data-butane-sidenav-controls]')
 
   Array.from(butaneSideNavs).forEach(sideNav => {
-    new ButaneSideNav(sideNav)
+    new ButaneSideNav(sideNav, options) // eslint-disable-line no-new
   })
 }
 

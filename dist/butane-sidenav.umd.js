@@ -107,13 +107,17 @@ var createClass = function () {
 }();
 
 var ButaneSideNav = function () {
-  function ButaneSideNav(element) {
+  function ButaneSideNav(element, options) {
     classCallCheck(this, ButaneSideNav);
 
     this.showButton = element;
     this.sideNavId = this.showButton.getAttribute('data-butane-sidenav-controls');
     this.sideNav = document.querySelector('#' + this.sideNavId);
     this.focusableElements = Array.from(this.sideNav.querySelectorAll(focusableElements));
+    this.options = {
+      contentContainer: options.contentContainer ? options.contentContainer : '#main'
+    };
+    this.contentContainer = document.querySelector(this.options.contentContainer);
     this.hideElements = this.sideNav.querySelectorAll('[data-butane-sidenav-hide]');
     this.shown = false;
     this.previousActiveElement = null;
@@ -150,6 +154,7 @@ var ButaneSideNav = function () {
       this.shown = true;
       this.sideNav.classList.add('is-active');
       this.sideNav.removeAttribute('inert');
+      this.contentContainer.inert = true;
 
       if (this.focusableElements.length > 0) {
         this.focusableElements.forEach(function (element) {
@@ -164,6 +169,7 @@ var ButaneSideNav = function () {
       this.shown = false;
       this.sideNav.classList.remove('is-active');
       this.sideNav.inert = true;
+      this.contentContainer.removeAttribute('inert');
 
       if (this.focusableElements.length > 0) {
         this.focusableElements.forEach(function (element) {
@@ -187,10 +193,12 @@ var ButaneSideNav = function () {
 }();
 
 var init = function init() {
+  var options = arguments.length > 0 && arguments[0] !== undefined ? arguments[0] : {};
+
   var butaneSideNavs = document.querySelectorAll('[data-butane-sidenav-controls]');
 
   Array.from(butaneSideNavs).forEach(function (sideNav) {
-    new ButaneSideNav(sideNav);
+    new ButaneSideNav(sideNav, options); // eslint-disable-line no-new
   });
 };
 
