@@ -21,7 +21,13 @@ import ButaneSideNav from 'butane-sidenav'
 ## Instantiate
 
 ```es6
+// using the default options
 ButaneSideNav.init()
+
+// using custom options, default options listed
+ButaneSideNav.init({
+  contentContainer: '#main'
+})
 ```
 
 ## Expected DOM structure
@@ -29,7 +35,7 @@ ButaneSideNav.init()
 Below is the minimum required elements and attributes needed. An additional styling layer is also required to show/hide side-navs. There are some basic example styles within `docs/styles.css` for reference.
 
 ```html
-<div>
+<div id="main">
   <button data-butane-sidenav-controls="side-nav-example">Show side-nav 1</button>
 </div>
 
