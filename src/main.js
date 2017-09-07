@@ -1,6 +1,6 @@
 'use strict'
 
-import 'inert-polyfill'
+import 'wicg-inert'
 import { focusableElements, keyCodes } from './utils'
 
 class ButaneSideNav {
@@ -19,9 +19,6 @@ class ButaneSideNav {
     this.shown = false
     this.previousActiveElement = null
     this.sideNav.inert = true
-    this.focusableElements.forEach(element => {
-      element.setAttribute('tabindex', -1)
-    })
 
     // Prebind the functions that will be bound in
     // addEventListener and removeEventListener to
@@ -45,13 +42,10 @@ class ButaneSideNav {
     this.previousActiveElement = document.activeElement
     this.shown = true
     this.sideNav.classList.add('is-active')
-    this.sideNav.removeAttribute('inert')
+    this.sideNav.inert = false
     this.contentContainer.inert = true
 
     if (this.focusableElements.length > 0) {
-      this.focusableElements.forEach(element => {
-        element.setAttribute('tabindex', 0)
-      })
       this.focusableElements[0].focus()
     }
   }
@@ -60,13 +54,7 @@ class ButaneSideNav {
     this.shown = false
     this.sideNav.classList.remove('is-active')
     this.sideNav.inert = true
-    this.contentContainer.removeAttribute('inert')
-
-    if (this.focusableElements.length > 0) {
-      this.focusableElements.forEach(element => {
-        element.setAttribute('tabindex', -1)
-      })
-    }
+    this.contentContainer.inert = false
 
     this.previousActiveElement.focus()
   }

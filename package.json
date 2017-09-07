@@ -1,6 +1,6 @@
 {
   "name": "butane-sidenav",
-  "version": "1.0.0-alpha.2",
+  "version": "1.0.0-alpha.3",
   "description": "A lightweight accessible side-nav JS library",
   "main": "dist/butane-sidenav.cjs.js",
   "module": "dist/butane-sidenav.esm.js",
@@ -32,8 +32,8 @@
     "rollup-plugin-node-resolve": "^3.0.0"
   },
   "dependencies": {
-    "inert-polyfill": "^0.2.3",
-    "ms": "^2.0.0"
+    "ms": "^2.0.0",
+    "wicg-inert": "^1.1.4"
   },
   "keywords": [
     "accessibility",
