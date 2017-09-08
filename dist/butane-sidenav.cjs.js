@@ -21,10 +21,11 @@ class ButaneSideNav {
     this.focusableElements = Array.from(
       this.sideNav.querySelectorAll(focusableElements)
     );
-    this.options = {
-      contentContainer: options.contentContainer ? options.contentContainer : '#main'
+    this.defaults = {
+      contentContainer: '#main'
     };
-    this.contentContainer = document.querySelector(this.options.contentContainer);
+    this.config = Object.assign({}, this.defaults, options);
+    this.contentContainer = document.querySelector(this.config.contentContainer);
     this.hideElements = this.sideNav.querySelectorAll('[data-butane-sidenav-hide]');
     this.shown = false;
     this.previousActiveElement = null;

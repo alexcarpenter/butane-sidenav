@@ -1,6 +1,6 @@
 {
   "name": "butane-sidenav",
-  "version": "1.0.0-alpha.3",
+  "version": "1.0.0-alpha.4",
   "description": "A lightweight accessible side-nav JS library",
   "main": "dist/butane-sidenav.cjs.js",
   "module": "dist/butane-sidenav.esm.js",
