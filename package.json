@@ -6,12 +6,10 @@
   "module": "dist/butane-sidenav.esm.js",
   "browser": "dist/butane-sidenav.umd.js",
   "scripts": {
-    "build": "rollup -c && npm run copy",
+    "build": "rollup -c",
     "dev": "rollup -c -w",
     "lint": "eslint src",
-    "test": "node test/test.js",
-    "copy": "cp ./dist/butane-sidenav.umd.js docs/butane-sidenav.umd.js",
-    "precommit": "npm run lint && npm run copy"
+    "test": "node test/test.js"
   },
   "devDependencies": {
     "babel": "^6.23.0",

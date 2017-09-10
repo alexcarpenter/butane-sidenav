@@ -2,3 +2,5 @@
 node_modules
 *.log
 *.map
+docs/_site
+docs/.sass-cache
