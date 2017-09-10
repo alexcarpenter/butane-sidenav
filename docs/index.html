@@ -1,36 +1,56 @@
-<!DOCTYPE html>
-<html lang="en">
-<head>
-  <meta charset="UTF-8">
-  <title>Butane Side-Nav</title>
-  <meta name="viewport" content="width=device-width, initial-scale=1">
-  <link rel="stylesheet" href="./styles.css">
-</head>
-<body>
-  <div id="main">
-    <button data-butane-sidenav-controls="side-nav-example-1">Show side-nav 1</button>
-    <button data-butane-sidenav-controls="side-nav-example-2">Show side-nav 2</button>
+---
+layout: default
+---
+<header>
+  <svg width="80" height="120" viewBox="0 0 80 120" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink"><title>side-nav</title><desc>Created using Figma</desc><use xlink:href="#a" transform="translate(40)" fill="#342BFF"/><use xlink:href="#b" transform="translate(20)" fill="#83A6FF"/><use xlink:href="#b" fill="#E5EDFF"/><defs><path id="a" d="M0 0h40v120H0V0z"/><path id="b" d="M0 0h20v120H0V0z"/></defs></svg>
+  <div>
+    <h1>{{ site.title }}</h1>
+    <p>v{{ site.version }}</p>
+  </div>
+</header>
+
+<section>
+  <button class="button" data-butane-sidenav-controls="side-nav-left">Show left side-nav</button>
+  <button class="button" data-butane-sidenav-controls="side-nav-right">Show right side-nav</button>
+</section>
+
+<section class="tabs" data-butane-tabs>
+  <ul class="tabs__list" aria-label="Code documentation example" data-butane-tablist>
+    <li class="tabs__list-item" data-butane-tab="tab-html">HTML</li>
+    <li class="tabs__list-item" data-butane-tab="tab-css">CSS</li>
+    <li class="tabs__list-item" data-butane-tab="tab-js">JS</li>
+  </ul>
+
+  <div class="tabs__panel" data-butane-tabpanel="tab-html">
+{% highlight html %}
+<div id="main">
+  <button data-butane-sidenav-controls="side-nav-example">Show side-nav 1</button>
+</div>
+
+<div id="side-nav-example">
+  <nav>
+    <button data-butane-sidenav-hide>&times;</button>
+  </nav>
+  <!--
+    An overlay is optional but recommended.
+    See docs/styles.css for recommended usage.
+    -->
+  <div data-butane-sidenav-hide></div>
+</div>
+{% endhighlight %}
   </div>
 
-  <div class="c-sidenav" id="side-nav-example-1">
-    <nav class="c-sidenav__inner">
-      <button data-butane-sidenav-hide>&times;</button>
-      <h1>Side Nav 1</h1>
-    </nav>
-    <div class="c-sidenav__overlay" data-butane-sidenav-hide></div>
+  <div class="tabs__panel" data-butane-tabpanel="tab-css">
+    {% highlight css %}
+
+    {% endhighlight %}
   </div>
 
-  <div class="c-sidenav" id="side-nav-example-2">
-    <nav class="c-sidenav__inner">
-      <button data-butane-sidenav-hide>&times;</button>
-      <h1>Side Nav 2</h1>
-    </nav>
-    <div class="c-sidenav__overlay" data-butane-sidenav-hide></div>
-  </div>
+  <div class="tabs__panel" data-butane-tabpanel="tab-js">
+    {% highlight js %}
+    import ButaneSideNav from 'butane-sidenav'
 
-  <script src="./butane-sidenav.umd.js"></script>
-  <script>
-    ButaneSideNav.init();
-  </script>
-</body>
-</html>
+    ButaneSideNav.init()
+    {% endhighlight %}
+  </div>
+</section>

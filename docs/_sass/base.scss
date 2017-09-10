@@ -1,0 +1,70 @@
+*,
+*:before,
+*:after {
+  box-sizing: inherit;
+}
+
+html {
+  box-sizing: border-box;
+  line-height: 1.6;
+  overflow-x: hidden;
+  -ms-text-size-adjust: 100%;
+  -webkit-text-size-adjust: 100%;
+  -webkit-font-smoothing: antialiased;
+}
+
+body {
+  margin: 0;
+  padding: 4rem 1rem;
+  font-family: $font-family;
+  background-color: $color-black;
+  color: $color-white;
+}
+
+h1, h2, h3, h4, h5, h6,
+blockquote, p, pre,
+dl, dd, ol, ul,
+figure,
+hr,
+fieldset, legend {
+  margin: 0;
+  padding: 0;
+}
+
+pre {
+  overflow: scroll;
+}
+
+code {
+  font-size: 1rem;
+}
+
+
+// Wrapper
+.wrapper {
+  margin-right: auto;
+  margin-left: auto;
+  max-width: $wrapper-width;
+
+  > * {
+    margin-bottom: 2rem;
+  }
+}
+
+
+// Button
+.button {
+  appearance: none;
+  padding: 1rem;
+  background-color: $color-blue-dark;
+  border: 0;
+  color: #fff;
+  font: inherit;
+  cursor: pointer;
+
+  &:hover,
+  &:focus {
+    background-color: darken($color-blue-dark, 10%);
+  }
+}
+

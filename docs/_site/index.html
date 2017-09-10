@@ -1,0 +1,81 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title></title>
+  <link rel="stylesheet" href="/css/main.css">
+</head>
+<body>
+  <main id="main" class="wrapper">
+    <header>
+  <svg width="80" height="120" viewBox="0 0 80 120" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink"><title>side-nav</title><desc>Created using Figma</desc><use xlink:href="#a" transform="translate(40)" fill="#342BFF"/><use xlink:href="#b" transform="translate(20)" fill="#83A6FF"/><use xlink:href="#b" fill="#E5EDFF"/><defs><path id="a" d="M0 0h40v120H0V0z"/><path id="b" d="M0 0h20v120H0V0z"/></defs></svg>
+  <div>
+    <h1>Butane Side-Nav</h1>
+    <p>v1.0.0</p>
+  </div>
+</header>
+
+<section>
+  <button class="button" data-butane-sidenav-controls="side-nav-left">Show left side-nav</button>
+  <button class="button" data-butane-sidenav-controls="side-nav-right">Show right side-nav</button>
+</section>
+
+<section class="tabs" data-butane-tabs>
+  <ul class="tabs__list" aria-label="Code documentation example" data-butane-tablist>
+    <li class="tabs__list-item" data-butane-tab="tab-html">HTML</li>
+    <li class="tabs__list-item" data-butane-tab="tab-css">CSS</li>
+    <li class="tabs__list-item" data-butane-tab="tab-js">JS</li>
+  </ul>
+
+  <div class="tabs__panel" data-butane-tabpanel="tab-html">
+<figure class="highlight"><pre><code class="language-html" data-lang="html"><span class="nt">&lt;div</span> <span class="na">id=</span><span class="s">"main"</span><span class="nt">&gt;</span>
+  <span class="nt">&lt;button</span> <span class="na">data-butane-sidenav-controls=</span><span class="s">"side-nav-example"</span><span class="nt">&gt;</span>Show side-nav 1<span class="nt">&lt;/button&gt;</span>
+<span class="nt">&lt;/div&gt;</span>
+
+<span class="nt">&lt;div</span> <span class="na">id=</span><span class="s">"side-nav-example"</span><span class="nt">&gt;</span>
+  <span class="nt">&lt;nav&gt;</span>
+    <span class="nt">&lt;button</span> <span class="na">data-butane-sidenav-hide</span><span class="nt">&gt;</span><span class="ni">&amp;times;</span><span class="nt">&lt;/button&gt;</span>
+  <span class="nt">&lt;/nav&gt;</span>
+  <span class="c">&lt;!--
+    An overlay is optional but recommended.
+    See docs/styles.css for recommended usage.
+    --&gt;</span>
+  <span class="nt">&lt;div</span> <span class="na">data-butane-sidenav-hide</span><span class="nt">&gt;&lt;/div&gt;</span>
+<span class="nt">&lt;/div&gt;</span></code></pre></figure>
+  </div>
+
+  <div class="tabs__panel" data-butane-tabpanel="tab-css">
+    
+  </div>
+
+  <div class="tabs__panel" data-butane-tabpanel="tab-js">
+    <figure class="highlight"><pre><code class="language-js" data-lang="js">    <span class="kr">import</span> <span class="nx">ButaneSideNav</span> <span class="nx">from</span> <span class="s1">'butane-sidenav'</span>
+
+    <span class="nx">ButaneSideNav</span><span class="p">.</span><span class="nx">init</span><span class="p">()</span>
+    </code></pre></figure>
+  </div>
+</section>
+
+  </main>
+
+  <div class="sideNav" id="side-nav-left">
+    <nav class="sideNav__inner sideNav__inner--left">
+      <button data-butane-sidenav-hide>&times;</button>
+    </nav>
+    <div class="sideNav__overlay" data-butane-sidenav-hide></div>
+  </div>
+
+  <div class="sideNav" id="side-nav-right">
+    <nav class="sideNav__inner sideNav__inner--right">
+      <button data-butane-sidenav-hide>&times;</button>
+    </nav>
+    <div class="sideNav__overlay" data-butane-sidenav-hide></div>
+  </div>
+  <script src="https://unpkg.com/butane-tabs@1.0.0-alpha.7/dist/butane-tabs.umd.js"></script>
+  <script src="https://unpkg.com/butane-sidenav@1.0.0-alpha.4/dist/butane-sidenav.umd.js"></script>
+  <script>
+    ButaneTabs.init();
+    ButaneSideNav.init();
+  </script>
+</body>
+</html>
