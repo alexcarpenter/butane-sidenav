@@ -52,6 +52,18 @@ code {
 }
 
 
+// Header
+.header {
+  display: flex;
+  align-items: center;
+
+  svg {
+    margin-right: 2rem;
+    flex-shrink: 0;
+  }
+}
+
+
 // Button
 .button {
   appearance: none;
