@@ -1,6 +1,6 @@
 .tabs {
   position: relative;
-  background: #131313;
+  background: $color-blue-light;
 }
 
 .tabs:before,
@@ -30,7 +30,9 @@
   font: inherit;
   cursor: pointer;
   text-align: center;
+  color: $color-white;
   background-color: $color-blue-dark;
+  border-bottom: 4px solid $color-blue-dark;
 
   &:hover,
   &:focus {
@@ -39,7 +41,7 @@
 }
 
 .tabs__list-item.is-active {
-  border-bottom: 4px solid $color-blue-medium;
+  border-color: $color-blue-medium;
 }
 
 .tabs__panel {

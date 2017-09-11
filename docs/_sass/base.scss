@@ -17,8 +17,8 @@ body {
   margin: 0;
   padding: 4rem 1rem;
   font-family: $font-family;
-  background-color: $color-black;
-  color: $color-white;
+  background-color: $color-white;
+  color: $color-black;
 }
 
 h1, h2, h3, h4, h5, h6,
@@ -32,7 +32,7 @@ fieldset, legend {
 }
 
 pre {
-  overflow: scroll;
+  overflow: auto;
 }
 
 code {
