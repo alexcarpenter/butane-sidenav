@@ -26,6 +26,9 @@ class ButaneSideNav {
     };
     this.config = Object.assign({}, this.defaults, options);
     this.contentContainer = document.querySelector(this.config.contentContainer);
+    if (!this.contentContainer) {
+      throw new Error(`No content container element found.`)
+    }
     this.hideElements = this.sideNav.querySelectorAll('[data-butane-sidenav-hide]');
     this.shown = false;
     this.previousActiveElement = null;

@@ -1,15 +1,16 @@
 {
   "name": "butane-sidenav",
-  "version": "1.0.0-alpha.4",
+  "version": "1.0.0-alpha.5",
   "description": "A lightweight accessible side-nav JS library",
   "main": "dist/butane-sidenav.cjs.js",
   "module": "dist/butane-sidenav.esm.js",
   "browser": "dist/butane-sidenav.umd.js",
   "scripts": {
-    "build": "rollup -c",
+    "build": "rollup -c && npm run copy",
     "dev": "rollup -c -w",
     "lint": "eslint src",
-    "test": "node test/test.js"
+    "test": "jest",
+    "copy": "cp ./dist/butane-sidenav.umd.js docs/butane-sidenav.umd.js"
   },
   "devDependencies": {
     "babel": "^6.23.0",

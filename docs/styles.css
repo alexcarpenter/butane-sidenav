@@ -12,7 +12,7 @@
   top: 0;
   bottom: 0;
   width: auto;
-  padding: 2rem;
+  padding: 50px;
   background-color: #fff;
   pointer-events: auto;
   z-index: 10;
@@ -48,4 +48,30 @@
 .is-active .sideNav__overlay {
   opacity: 1;
   pointer-events: auto;
+}
+
+/**
+ * Demo specific styles
+ */
+
+*,
+*:before,
+*:after {
+  box-sizing: inherit;
+}
+
+html {
+  box-sizing: border-box;
+  line-height: 1.6;
+  overflow-x: hidden;
+  -ms-text-size-adjust: 100%;
+  -webkit-text-size-adjust: 100%;
+  -webkit-font-smoothing: antialiased;
+}
+
+body {
+  margin: 0;
+  padding: 50px;
+  font-family: sans-serif;
+  background-color: #eee;
 }
