@@ -1,6 +1,6 @@
 # butane-sidenav
 
-[![butane-sidenav on NPM](https://img.shields.io/npm/v/butane-sidenav.svg?style=flat-square)](https://www.npmjs.com/package/butane-sidenav) [![Standard JavaScript Style](https://img.shields.io/badge/code_style-standard-brightgreen.svg?style=flat-square)](http://standardjs.com/)
+[![butane-sidenav on NPM](https://img.shields.io/npm/v/butane-sidenav.svg?style=flat-square)](https://www.npmjs.com/package/butane-sidenav)
 
 [Demo](https://codepen.io/alexcarpenter/pen/WMeQxm)
 
