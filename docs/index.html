@@ -6,9 +6,9 @@
   <link rel="stylesheet" href="styles.css">
 </head>
 <body>
-  <main id="main">
-    <button data-butane-sidenav-controls="side-nav-left">Show left side-nav</button>
-    <button data-butane-sidenav-controls="side-nav-right">Show right side-nav</button>
+  <main id="main" data-butane-sidenav-container>
+    <button data-butane-sidenav-show="side-nav-left">Show left side-nav</button>
+    <button data-butane-sidenav-show="side-nav-right">Show right side-nav</button>
   </main>
 
   <div class="sideNav" id="side-nav-left">
@@ -27,9 +27,16 @@
     <div class="sideNav__overlay" data-butane-sidenav-hide></div>
   </div>
 
-  <script src="butane-sidenav.umd.js"></script>
+  <script src="../dist/butane-sidenav.umd.js"></script>
   <script>
-    ButaneSideNav.init();
+    ButaneSidenav.init({
+      onShow: function(el) {
+        console.log('Show ' + el.getAttribute('id'));
+      },
+      onHide: function(el) {
+        console.log('Hide ' + el.getAttribute('id'));
+      }
+    });
   </script>
 </body>
 </html>

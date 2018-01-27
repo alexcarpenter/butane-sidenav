@@ -2,37 +2,22 @@
   "name": "butane-sidenav",
   "version": "1.0.0-alpha.5",
   "description": "A lightweight accessible side-nav JS library",
-  "main": "dist/butane-sidenav.cjs.js",
-  "module": "dist/butane-sidenav.esm.js",
-  "browser": "dist/butane-sidenav.umd.js",
+  "source": "src/index.js",
+  "module": "dist/butane-sidenav.es.js",
+  "main": "dist/butane-sidenav.js",
+  "umd:main": "dist/butane-sidenav.umd.js",
+  "files": [
+    "dist"
+  ],
   "scripts": {
-    "build": "rollup -c && npm run copy",
-    "dev": "rollup -c -w",
-    "lint": "eslint src",
-    "test": "jest",
-    "copy": "cp ./dist/butane-sidenav.umd.js docs/butane-sidenav.umd.js"
+    "build": "microbundle build --name 'ButaneSidenav'",
+    "dev": "microbundle watch --name 'ButaneSidenav'"
   },
   "devDependencies": {
-    "babel": "^6.23.0",
-    "babel-core": "^6.26.0",
-    "babel-plugin-external-helpers": "^6.18.0",
-    "babel-preset-es2015-rollup": "^3.0.0",
-    "babel-preset-stage-0": "^6.16.0",
-    "eslint": "^4.5.0",
-    "eslint-config-standard": "^10.2.1",
-    "eslint-plugin-import": "^2.7.0",
-    "eslint-plugin-node": "^5.1.1",
-    "eslint-plugin-promise": "^3.5.0",
-    "eslint-plugin-standard": "^3.0.1",
-    "husky": "^0.14.3",
-    "rollup": "^0.46.0",
-    "rollup-plugin-babel": "^3.0.2",
-    "rollup-plugin-commonjs": "^8.0.2",
-    "rollup-plugin-node-resolve": "^3.0.0"
+    "microbundle": "^0.4.3"
   },
   "dependencies": {
-    "ms": "^2.0.0",
-    "wicg-inert": "^1.1.4"
+    "wicg-inert": "^1.1.6"
   },
   "keywords": [
     "accessibility",
@@ -40,7 +25,11 @@
   ],
   "author": "Alex Carpenter",
   "license": "MIT",
-  "files": [
-    "dist"
-  ]
+  "repository": {
+    "type": "git",
+    "url": "git+ssh://git@github.com/alexcarpenter/butane-sidenav.git"
+  },
+  "bugs": {
+    "url": "https://github.com/alexcarpenter/butane-sidenav/issues"
+  }
 }
