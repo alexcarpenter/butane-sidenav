@@ -29,7 +29,7 @@ ButaneSideNav.init()
 
 ## Expected DOM structure
 
-Below is the minimum required elements and attributes needed. An additional styling layer is also required to show/hide side-navs. There are some basic example styles within `docs/styles.css` for reference.
+Below is the minimum required elements and attributes needed. An additional styling layer is also required to show/hide side-navs. View the [demo styles](https://codepen.io/alexcarpenter/pen/WMeQxm.scss) for example CSS setup.
 
 ```html
 <div id="main" data-butane-sidenav-container>
