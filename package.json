@@ -1,6 +1,6 @@
 {
   "name": "butane-sidenav",
-  "version": "1.0.0-beta.1",
+  "version": "1.0.0-beta.2",
   "description": "A lightweight accessible side-nav JS library",
   "source": "src/index.js",
   "module": "dist/butane-sidenav.es.js",

@@ -28,8 +28,15 @@ const ButaneSidenav = (() => {
       this.containerEl = containerEl
       this.trigger = trigger
       this.sidenav = document.getElementById(targetSidenav)
-      this.sidenav.inert = true
       this.config = { hideSelector, activeClass, onShow, onHide }
+
+      if (!this.sidenav) {
+        throw new Error(
+          `butane-sidenav cannot find a sidenav element with an id of '${targetSidenav}'`
+        )
+      }
+
+      this.sidenav.inert = true
 
       this.trigger.addEventListener('click', () => this.showSidenav())
 
@@ -100,9 +107,19 @@ const ButaneSidenav = (() => {
 
     const containerEl = document.querySelector(`[${options.containerSelector}]`)
 
+    if (!containerEl) {
+      throw new Error(
+        `butane-sidenav requires a container element with a data attribute of '${options.containerSelector}'`
+      )
+    }
+
     const triggers = Array.from(
       document.querySelectorAll(`[${options.showSelector}]`)
     )
+
+    if (triggers.length <= 0) {
+      return
+    }
 
     triggers.forEach(trigger => {
       options.containerEl = containerEl
