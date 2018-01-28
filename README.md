@@ -1,6 +1,6 @@
 # butane-sidenav
 
-[![butane-sidenav on NPM](https://img.shields.io/npm/v/butane-sidenav.svg?style=flat-square)](https://www.npmjs.com/package/butane-sidenav)
+⚠️ This project is no longer maintained, checkout [butane-show-hide](https://github.com/alexcarpenter/butane-show-hide) instead. ⚠️
 
 [Demo](https://codepen.io/alexcarpenter/pen/WMeQxm)
 
